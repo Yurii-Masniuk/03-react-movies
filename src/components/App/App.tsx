@@ -2,25 +2,21 @@ import { useState } from 'react'
 import axios from 'axios'
 import css from './App.module.css'
 import SearchBar from '../SearchBar/SearchBar'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const handleSearch = (query: string) => {
+
+  };
+
   return (
     <>
-      <SearchBar />
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <SearchBar onSubmit={handleSearch} />
+      <Toaster />
+
+
     </>
   )
 }
